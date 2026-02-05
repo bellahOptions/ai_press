@@ -13,3 +13,20 @@ h1{
     font-family: "Merriweather", serif;
     font-optical-sizing: auto;
 }
+@keyframes slide-fade {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+.logo{
+    animation: slide-fade 3s ease-in-out 0s infinite alternate forwards;
+}
