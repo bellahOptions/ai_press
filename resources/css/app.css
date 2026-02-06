@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+@source "../../node_modules/flowbite-datepicker";
+
+
 *{
     margin: 0;
     padding: 0;
@@ -9,9 +15,20 @@
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
 }
-h1{
-    font-family: "Merriweather", serif;
-    font-optical-sizing: auto;
+.exp{
+  padding: 150px 80px;
+}
+@keyframes emphasis {
+  0%{
+    background-color: black;
+    transform: rotate(3);
+  }
+  100%{
+    transform: rotate(1);
+  }
+}
+#gq{
+  animation: emphasis 1s ease-in-out infinite;
 }
 @keyframes slide-fade {
   0% {

@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EstimatorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index'])->name('landingPage');
+
+Route::get('/get/estimate', [EstimatorController::class, 'index'])->name('estimator.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
