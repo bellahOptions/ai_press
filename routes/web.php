@@ -3,11 +3,12 @@
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EstimatorController;
+use App\Http\Controllers\JobsController;
+use App\Http\Controllers\WaitlistController;
 use Illuminate\Support\Facades\Route;
-//Admin routes
+//Admin routes 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\CouponController;
@@ -16,6 +17,17 @@ use App\Http\Controllers\Admin\RoleController;
 Route::get('/', [PageController::class, 'index'])->name('landingPage');
 
 Route::get('/get/estimate', [EstimatorController::class, 'index'])->name('estimator.index');
+//Waitlist
+Route::post('/join-waitlist', [WaitlistController::class, 'joinWaitlist'])->name('join.waitlist');
+Route::get('/waitlist/success', [WaitlistController::class, 'successpage'])->name('waitlist.success');
+
+//Jobs
+Route::prefix('user')->name('jobs.')->middleware(['auth', 'auth'])->group(function(){
+    
+Route::get('/jobs', [JobsController::class, 'index'])->name('index');
+Route::get('/jobs/track', [JobsController::class, 'track'])->name('track');
+
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -37,10 +49,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     // Users
     Route::resource('users', UserController::class);
     
-    // Jobs
+    /* Jobs
     Route::resource('jobs', JobController::class);
     Route::put('jobs/{job}/status', [JobController::class, 'updateStatus'])->name('jobs.status');
-    
+    */
     // Services & Pricing
     Route::resource('services', ServiceController::class);
     Route::put('services/{service}/update-price', [ServiceController::class, 'updatePrice'])->name('services.update-price');

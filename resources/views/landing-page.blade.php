@@ -387,7 +387,7 @@
 
                 {{-- Right Column: Waitlist Form --}}
                 <div class="lg:sticky lg:top-24">
-                    <form action="#" method="POST" class="bg-white rounded-2xl shadow-2xl p-8 lg:p-10">
+                    <form action="{{ route('join.waitlist') }}" method="POST" class="bg-white rounded-2xl shadow-2xl p-8 lg:p-10">
                         @csrf
                         <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Reserve Your Spot</h3>
                         
@@ -399,7 +399,7 @@
                                 <input 
                                     type="text" 
                                     id="name" 
-                                    name="name" 
+                                    name="fullName" 
                                     required
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
                                     placeholder="Enter your full name"
@@ -413,7 +413,7 @@
                                 <input 
                                     type="tel" 
                                     id="whatsapp" 
-                                    name="whatsapp" 
+                                    name="phone" 
                                     required
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition"
                                     placeholder="+234 800 000 0000"
