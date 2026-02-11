@@ -31,7 +31,7 @@
                     Contact Us
                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300"></span>
                 </a>
-                <a href="#blog" class="nav-link group relative text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
+                <a href="{{ route('blog') }}" class="nav-link group relative text-gray-700 hover:text-red-600 font-medium transition-colors duration-200">
                     Blog
                     <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 group-hover:w-full transition-all duration-300"></span>
                 </a>
@@ -90,7 +90,7 @@
             <a href="#contact" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors duration-200">
                 Contact Us
             </a>
-            <a href="#blog" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors duration-200">
+            <a href="{{ route('blog') }}" class="block px-4 py-3 text-base font-medium text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors duration-200">
                 Blog
             </a>
 

@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\CouponController;
 use App\Http\Controllers\Admin\RoleController;
 
 Route::get('/', [PageController::class, 'index'])->name('landingPage');
+Route::get('/blog', [PageController::class, 'openBlog'])->name('blog');
 
 Route::get('/get/estimate', [EstimatorController::class, 'index'])->name('estimator.index');
 //Waitlist
