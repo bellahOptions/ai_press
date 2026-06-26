@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!--Icon-->
+        {{-- SEO: meta tags, OG, Twitter cards, JSON-LD schemas --}}
+        <x-seo.head :dynamic="$seoData ?? []" />
+
+        <!--Favicons-->
         <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('/apple-icon-57x57.png') }}">
 <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('/apple-icon-60x60.png') }}">
 <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('/apple-icon-72x72.png') }}">
@@ -24,8 +27,6 @@
 <meta name="msapplication-TileImage" content="{{ asset('/ms-icon-144x144.png') }}">
 <meta name="theme-color" content="#ffffff">
 
-        <title>@yield('title')</title>
-
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,4 +43,3 @@
             @include('layouts.footer')
     </body>
 </html>
-`
