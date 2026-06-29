@@ -1,6 +1,6 @@
 @extends('layouts.theme')
-@section('title', 'Redefinig Prints')
-@section('contents')
+@section('title', 'Redefining Prints')
+@section('content')
     <main role="main" class="relative min-h-screen overflow-hidden">
         <div class="absolute inset-0">
             <video class="h-full w-full object-cover" autoplay muted loop playsinline
@@ -31,6 +31,5 @@
                 </form>
             </div>
         </div>
-    </main>
     </main>
 @endsection

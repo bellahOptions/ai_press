@@ -9,9 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
     <style>
         [x-cloak] { display: none !important; }
-        .sidebar-link { @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-400 hover:bg-gray-800 hover:text-white transition-all duration-150; }
-        .sidebar-link.active { @apply bg-red-600/20 text-red-400 border border-red-600/30; }
-        .sidebar-section { @apply text-xs font-bold uppercase tracking-widest text-gray-600 px-3 mb-2 mt-6 first:mt-3; }
     </style>
 </head>
 <body class="h-full" x-data="{ sidebarOpen: false }">

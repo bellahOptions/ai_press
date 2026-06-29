@@ -21,16 +21,10 @@
     <div class="relative z-10 px-4 sm:px-6 lg:px-8 py-24">
         <div class="max-w-5xl mx-auto text-center space-y-7">
 
-            {{-- Badge --}}
-            <div class="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/40 text-red-300 text-sm font-semibold px-4 py-2 rounded-full backdrop-blur-sm">
-                <span class="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
-                Lagos, Nigeria &bull; CAC Registered &bull; RC: 1878085
-            </div>
-
             {{-- Headline --}}
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tighter tracking-tight">
                 Quality Printing.<br class="hidden sm:block">
-                <span class="bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">Creative Excellence.</span><br class="hidden sm:block">
+                <span class="bg-red-500 bg-clip-text text-transparent">Creative Excellence.</span><br class="hidden sm:block">
                 On Time. Every Time.
             </h1>
 

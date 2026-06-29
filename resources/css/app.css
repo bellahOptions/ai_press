@@ -1,45 +1,81 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/forms";
-@import "flowbite/src/themes/default";
-@plugin "flowbite/plugin";
-@source "../../node_modules/flowbite";
+@source "../../app/Livewire/**/*.php";
+@source "../../resources/views/**/*.blade.php";
+@source "../../resources/js/**/*.js";
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../node_modules/flowbite/**/*.js";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;
+/* ── Theme overrides ───────────────────────────────────────── */
+@theme {
+    --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+        sans-serif;
 }
-.exp{
-  padding: 150px 80px;
+
+/* ── Base reset — inside @layer base so Tailwind utilities override it ──── */
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "DM Sans", sans-serif;
+        font-optical-sizing: auto;
+    }
+    *, ::before, ::after {
+        border-color: rgb(229 231 235);
+    }
 }
+
+/* ── Ops sidebar component styles ──────────────────────────── */
+@layer components {
+    .sidebar-link {
+        @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+               text-gray-400 hover:bg-gray-800 hover:text-white transition-all duration-150;
+    }
+    .sidebar-link.active {
+        @apply text-red-400 border border-red-600/30;
+        background-color: rgb(220 38 38 / 0.2);
+    }
+    .sidebar-section {
+        @apply text-xs font-bold uppercase tracking-widest text-gray-600 px-3 mb-2 mt-6;
+    }
+}
+
+/* ── Custom utilities ───────────────────────────────────────── */
+.exp {
+    padding: 150px 80px;
+}
+
 @keyframes emphasis {
-  0%{
-    background-color: black;
-    transform: rotate(3);
-  }
-  100%{
-    transform: rotate(1);
-  }
+    0% {
+        background-color: black;
+        transform: rotate(3deg);
+    }
+    100% {
+        transform: rotate(1deg);
+    }
 }
-#gq{
-  animation: emphasis 1s ease-in-out infinite;
+
+#gq {
+    animation: emphasis 1s ease-in-out infinite;
 }
+
 @keyframes slide-fade {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  50% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
 }
-.logo{
+
+.logo {
     animation: slide-fade 3s ease-in-out 0s infinite alternate forwards;
 }
