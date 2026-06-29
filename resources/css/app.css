@@ -1,12 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
 @source "../../node_modules/flowbite";
-@source "../../node_modules/flowbite-datepicker";
-
 
 *{
     margin: 0;
